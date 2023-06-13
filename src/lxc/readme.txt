@@ -2,7 +2,8 @@
 Виртуалка и Хост в одной сети.
 
 1. Устанавливаем apcupsd:
-	yum install apcupsd
+	dnf install epel-release epel-next-release
+	dnf install apcupsd libusbx bc
 	
 2. Редактируем файл /etc/apcupsd/apcupsd.conf из Гита:
 	для поля "DEVICE" изменить "ipToHost" на реальный айпишник Хоста, к которому подключен ИБП
@@ -16,7 +17,7 @@
 	systemctl enable apcupsd
 	
 6. Ставим snmpd:
-	yum install net-snmp
+	dnf install net-snmp
 	
 7. Редактируем файл /etc/snmpd/snmpd.conf из Гита:
 	syslocation "Имя виртуалки"
